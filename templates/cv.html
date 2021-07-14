@@ -1,0 +1,147 @@
+{% extends "layouts/regular.html" %}
+{% from "macros/macros.html" import icon, link_icon %}
+
+{% block content %}
+    <header class="text-right m-auto mt-10 lg:w-2/3">
+        <div class="mt-auto inline-block mx-4">
+            <div class="text-xl text-orange-500">@ddorn <span class="text-gray-600">or</span> @CozyFractal</div>
+            <h1 class="text-8xl">Diego Dorn</h1>
+        </div>
+        <img class="mt-4 h-64 inline-block align-baseline border" src="/static/imgs/diego/diego.png" alt="Diego smiling">
+    </header>
+
+
+    <div class="xl:w-2/3 mx-auto flex flex-col">
+
+        <ul class="mx-auto mt-8">
+            {% for img, link, descr in [
+                ("gitlab", "https://gitlab.com/ddorn", "See public projects on Gitlab"),
+                ("github", "https://gitlab.com/github", "See public projects on Github"),
+                ("twitter", "https://twitter.com/CozyFractal", "View twitter profile"),
+                ("youtube", "https://www.youtube.com/channel/UCN0kVAIU46vvM86CoGtW1Lw", "Visit my Youtube channel"),
+                ("itch", "https://cozyfractal.itch.io/", "Check out my games!"),
+                ("mail", "mailto://diego.dorn@epfl.ch", "Contact me by email")
+            ] %}
+                {{ link_icon(img, link, descr) }}
+            {% endfor %}
+
+        </ul>
+
+
+        <div class="lg:grid grid-cols-2 gap-6 mt-6">
+            <!-- First Col -->
+            <div>
+                <h2 class="subtitle">Education</h2>
+                <ol class="timeline space-y-4">
+                {% for years, study in [
+                    ("2021 - Current", "Master in computer science at EPFL"),
+                    (2021, "Graduating from the EPFL with a Bachelor of Mathematics"),
+                    ("Spring 2021", "Bachelor project in descriptive set theory, under the supervision of Jacques Duparc"),
+                    (2019, "Mathinfoly: Summer school on cryptography, blockchain and formal verification at ENS Lyon, France"),
+                    (2018, "Start of a bachelor of mathematics at EPFL, Switzerland. "),
+                    ("2017-2018", "One year exchange in Australia, obtention of the VCE at the Koonung secondary college."),
+                    ("2013-2017", "High school scientific degree in Strasbourg, France."),
+                ] %}
+                    <li class="rounded-xl bg-gray-800 p-4">
+                        <h3 class="font-bold">{{ years }}</h3>
+                        <span>{{ study }}</span>
+                    </li>
+                {% endfor %}
+                </ol>
+
+
+                <h2 class="subtitle">Volunteering</h2>
+                <ol class="space-y-4">
+                {% for date, title, info, descr in [
+                    ("2020-2021", "President of CQFD",
+                        "CQFD is the association of students in mathematics at EPFL. It organises academic and social events and mediation with the school.",
+                        "Management of a team of 14 people, redesign of events to accomodate the pandemic."),
+                    ("2020", "National organiser of the 𝕋𝔽𝕁𝕄²",
+                        "The 𝕋𝔽𝕁𝕄² is a French mathematical competion for high school students where they solve, write and debate about open problems over the span of three months. It aims to introduce them to the world of mathematical research. ",
+                        "Coordination of 9 events across France, adaptation of the event to online under unpredictible conditions with only a 32% decrease in participation, developement of an online infrastructure to accomodate the new needs, gestion of external communication (Twitter, Website)"),
+                    ("2018-2020", "Member of CQFD",
+                        "",
+                        "Organisation of events with 80+ people, responsible for a 250+ sweater command and distribution."),
+                ] %}
+                    <li class="space-y-2">
+                        <h3 class="font-bold">{{ date }} — {{ title }} </h3>
+                        <p class="w-4/5">{{ descr }}</p>
+                        <div class="flex justify-end italic text-gray-300 text-right">
+                            <p class="w-4/5">{{ info }}</p></div>
+                    </li>
+                {% endfor %}
+                </ol>
+
+{#                <h2 class="subtitle">Contact</h2>#}
+            </div>
+            <!-- Second Col -->
+            <div>
+
+                <h2 class="subtitle">Programming</h2>
+                <ul class="gap-4">
+                {% for language, details in [
+                    ("Python", [
+                        "50+ projects",
+                        "7 years experience",
+                        "5+ libraries created",
+                    ]),
+                    ("Rust", ["10+ projects", ""]),
+                    ("Python tools", [
+                        "Math libraries: numpy, numba, matplotlib, multiprocessing",
+                        "Network: flask, fastAPI, asyncio, discord.py, sockets",
+                        "Game dev: pygame, moderngl",
+                    ]),
+                    ("JavaScript", ["5+ projects", "3 Webapps with VueJS"]),
+                    ("C++", ["Teaching assistant for two years at EPFL", "Teaching staff on two MOOCS from EPFL"]),
+                    ("Other languages", ["6502 Assembly, GLSL", "Coq, Latex"]),
+                    ("Daily tools", ["bash, i3wm, vim", "git, Gitlab, Github", "OS: NixOS, Arch Linux"]),
+                ] %}
+                    <li class="text-right odd:text-left">
+                        <h3 class="text-xl text-orange-500">{{ language }}</h3>
+                        <ul class="">{% for detail in details %}
+                            <li>{{ detail }}</li>
+                        {% endfor %}</ul>
+                    </li>
+                {% endfor %}
+                </ul>
+
+                <h2 class="subtitle">Mathematics</h2>
+
+                <h3 class="text-2xl py-4"> Topics of interest</h3>
+                <div class="grid-cols-2 grid gap-6">
+                    {% for topic, details in {
+                        "Logic": "Formal logic, model theory, formal verification",
+                        "Set theory": "Forcing, large cardinals, independance results",
+                        "Descriptive set theory": "Wadge hierachy, infinite games, difference hierarchy",
+                        "Topology": "General topology, Polish spaces, (co)homology",
+                        "Discrete mathematics": "Combinatorics, sequences, recursivity, automata",
+                        "Others": "Fractals, complex analysis, chaos theory, Galois theory, elliptic curves",
+                    }.items() %}
+
+                        <div class="pb-4">
+                            <div class="font-bold text-orange-500 pb-2">{{ topic }}</div>
+                            <div>{{ details }}</div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <h3 class="text-2xl pb-4">Papers</h3>
+                <div>
+                    {% for title, link  in [
+                        ("Infinite games in the Baire space, Bachelor thesis", "https://gitlab.com/ddorn/ba6/-/jobs/artifacts/master/raw/projet/projet.pdf?job=pdf"),
+                    ] %}
+                        <div class="bg-gray-800 rounded-xl p-4">
+                            {{ title }} (<a href="{{ link }}">link</a>)
+                        </div>
+                    {% endfor %}
+                </div>
+
+{#                <h2 class="subtitle">Others skills and intersts</h2>#}
+{#                    Juggle, Climbing 7b, Slackline, Cooking, Photography#}
+            </div>
+        </div>
+
+        <p class="text-center p-4 hidden">I am currently not interested in job oportunities.</p>
+    </div>
+
+    <script src="/static/random.js"></script>
+{% endblock %}

@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "vue": "^3.0.5"
+  },
+  "devDependencies": {
+    "autoprefixer": "10.2.4",
+    "tailwindcss": "^2.0.0"
+  },
+  "scripts": {
+    "tw": "tailwind build static/source.css -o static/style.css -c tailwind.config.js --no-autoprefixer",
+    "tw-prod": "NODE_ENV=production npm run tw",
+    "start": "uvicorn main:app --port ${PORT:-8400} --help"
+  }
+}
