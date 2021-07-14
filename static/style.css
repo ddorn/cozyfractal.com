@@ -948,6 +948,10 @@ video {
   padding: 1.5rem;
 }
 
+.p-8 {
+  padding: 2rem;
+}
+
 .px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
@@ -1122,6 +1126,10 @@ video {
 
 .w-8 {
   width: 2rem;
+}
+
+.w-64 {
+  width: 16rem;
 }
 
 .w-3\/4 {

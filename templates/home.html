@@ -1,0 +1,32 @@
+{% extends "layouts/regular.html" %}
+{% from "macros/macros.html" import showcase_card %}
+{% block content %}
+    <div class="mt-10 h-96 p-8 rounded-xl m-auto bg-gray-800
+                text-center">
+        <h1 class="text-4xl">CozyFractal</h1>
+        <p class="w-64 mx-auto mt-4">
+            Mathematician<br>
+            Game developper<br>
+            Computer science enthousiast
+        </p>
+    </div>
+
+    <div class="mx-auto md:max-w-screen-xl text-center ">
+        {{ showcase_card("Flyre",
+                "A pixelart shmup with a skilltree.<br><br>Winner of the Pygame Community Easter Jam, that lasted a week.",
+                "flyre.png",
+                "python pygame",
+                youtube="https://www.youtube.com/watch?v=_AwWQzmCyjg",
+                gitlab="https://gitlab.com/ddorn/flyre",
+                itch="https://cozyfractal.itch.io/flyre",
+                jam="https://itch.io/jam/pygame-community-easter-jam"
+            ) }}
+        {{ showcase_card("The Fractal Space",
+                "A random fractal generator. <br><br>Enter your name or anything, get a fractal !",
+                "thefractalspace.png",
+                "python javascript flask",
+                web="https://thefractal.space",
+                gitlab="https://gitlab.com/ddorn/thefractal.space"
+            ) }}
+    </div>
+{% endblock %}

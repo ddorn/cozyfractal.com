@@ -13,17 +13,19 @@ templates = Jinja2Templates(directory="templates")
 
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request):
-    return templates.TemplateResponse("cv.html", {"request": request})
+    return templates.TemplateResponse("home.html", {"request": request})
 
 @app.get("/home", response_class=RedirectResponse)
 async def home_redirect():
     return RedirectResponse("/")
 
+@app.get("/blog", response_class=RedirectResponse)
+async def blog_redirect():
+    return RedirectResponse("https://ddorn.gitlab.io")
 
 @app.get("/cv", response_class=HTMLResponse)
 async def cv(request: Request):
     return templates.TemplateResponse("cv.html", {"request": request})
-
 
 @app.get("/gamedev", response_class=HTMLResponse)
 async def gamedev(request: Request):
