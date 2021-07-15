@@ -62,6 +62,9 @@ module.exports = {
             backgroundColor: ['odd'],
             zIndex: ['hover'],
             textAlign: ['odd'],
+            justifyContent: ['odd'],
+            borderRadius: ['odd'],
+            borderWidth: ['odd'],
         },
     }
 }

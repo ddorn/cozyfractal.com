@@ -1,32 +1,69 @@
 {% extends "layouts/regular.html" %}
-{% from "macros/macros.html" import showcase_card %}
+{% from "macros/macros.html" import showcase_card, icon %}
 {% block content %}
-    <div class="mt-10 h-96 p-8 rounded-xl m-auto bg-gray-800
+    <div class="mt-10 p-8
                 text-center">
         <h1 class="text-4xl">CozyFractal</h1>
-        <p class="w-64 mx-auto mt-4">
-            Mathematician<br>
-            Game developper<br>
-            Computer science enthousiast
-        </p>
     </div>
 
-    <div class="mx-auto md:max-w-screen-xl text-center ">
-        {{ showcase_card("Flyre",
-                "A pixelart shmup with a skilltree.<br><br>Winner of the Pygame Community Easter Jam, that lasted a week.",
-                "flyre.png",
-                "python pygame",
-                youtube="https://www.youtube.com/watch?v=_AwWQzmCyjg",
-                gitlab="https://gitlab.com/ddorn/flyre",
-                itch="https://cozyfractal.itch.io/flyre",
-                jam="https://itch.io/jam/pygame-community-easter-jam"
-            ) }}
-        {{ showcase_card("The Fractal Space",
-                "A random fractal generator. <br><br>Enter your name or anything, get a fractal !",
-                "thefractalspace.png",
-                "python javascript flask",
-                web="https://thefractal.space",
-                gitlab="https://gitlab.com/ddorn/thefractal.space"
-            ) }}
+    {% for url, title, text, img_descr, see_more_url in [
+        ("/static/imgs/fractal_spiral.png", "Mathematician", "
+            Formal logic, descriptive set theory
+        ", "Zoom of the mandelbrot set rendered with a home made tool",
+        ""),
+        ("/static/imgs/asciidots_pi.png", "Computer Science Enthusiast", "
+            Complexity, Algorithms, Language design, Formal verification
+        ", "A program to compute prime numbers written in Asciidots, an esoteric langage created with @aaronjanse",
+        ""),
+        ("/static/imgs/flyre_gameplay.png", "Game Developper", "
+            I love to create colorful and visually pleasing experiences, and anjoy every aspect of problem solving
+        ", "Flyre, a game made with python and pygame, winner of a one week game jam.",
+        "/gamedev"),
+    ] %}
+    <div class="mt-10 mx-auto w-full
+                rounded-xl
+                flex odd:justify-end
+                bg-gray-700 bg-cover bg-center"
+         style="background-image: url('{{ url  }}'); height: 40rem">
+        <div class="w-1/3 p-6 h-full
+            flex flex-col items-center
+            bg-gray-800 bg-opacity-70 text-center
+            {{ loop.cycle("rounded-l-xl border-", "rounded-r-xl border-") }}
+">
+            <h2 class="subtitle font-bold">{{ title }}</h2>
+            <p class="mb-auto w-2/3">{{ text }}</p>
+            <p class="text-gray-300 w-4/5 px-2
+                {{ loop.cycle("border-r-4 text-right ml-auto", "border-l-4 text-left mr-auto") }}
+            ">{{ img_descr }}</p>
+        </div>
+        {% if see_more_url %}
+            <a class="mt-auto ml-auto mr-4 mb-4  bg-gray-800 p-3
+            text-white font-bold border border-r
+            transform transition
+            hover:translate-x-1
+"
+               href="{{ see_more_url }}">See more {{ icon("right-arrow") }}</a>
+        {% endif %}
     </div>
+    {% endfor %}
+
+{#    <div class="mx-auto md:max-w-screen-xl text-center ">#}
+{#        {{ showcase_card("Flyre",#}
+{#                "A pixelart shmup with a skilltree.<br><br>Winner of the Pygame Community Easter Jam, that lasted a week.",#}
+{#                "flyre.png",#}
+{#                "python pygame",#}
+{#                youtube="https://www.youtube.com/watch?v=_AwWQzmCyjg",#}
+{#                gitlab="https://gitlab.com/ddorn/flyre",#}
+{#                itch="https://cozyfractal.itch.io/flyre",#}
+{#                jam="https://itch.io/jam/pygame-community-easter-jam"#}
+{#            ) }}#}
+{#        {{ showcase_card("The Fractal Space",#}
+{#                "A random fractal generator. <br><br>Enter your name or anything, get a fractal !",#}
+{#                "thefractalspace.png",#}
+{#                "python javascript flask",#}
+{#                web="https://thefractal.space",#}
+{#                gitlab="https://gitlab.com/ddorn/thefractal.space"#}
+{#            ) }}#}
+{#    </div>#}
+    <script src="{{ url_for('static', path='random.js') }}"></script>
 {% endblock %}
