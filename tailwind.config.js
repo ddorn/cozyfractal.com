@@ -14,6 +14,7 @@ module.exports = {
             black: colors.black,
             white: colors.white,
             gray: colors.trueGray,
+            purple: colors.purple,
             orange: {
                 50: '#fff6e5',
                 100: '#ffedcc',
@@ -59,7 +60,7 @@ module.exports = {
     },
     variants: {
         extend: {
-            backgroundColor: ['odd'],
+            backgroundColor: ['odd', 'group-focus'],
             zIndex: ['hover'],
             textAlign: ['odd'],
             justifyContent: ['odd'],

@@ -1,51 +1,57 @@
-{% extends "layouts/regular.html" %}
+{% extends "layouts/base.html" %}
 {% from "macros/macros.html" import showcase_card, icon %}
-{% block content %}
-    <div class="mt-10 p-8
+{% block body %}
+    <div class="p-8
                 text-center">
-        <h1 class="text-4xl">CozyFractal</h1>
+        <h1 class="text-4xl font-bold">CozyFractal</h1>
     </div>
 
-    {% for url, title, text, img_descr, see_more_url in [
+    <div class="grid lg:grid-cols-2 grid-rows-3 lg:grid-rows-2 lg:w-3/4 mx-auto gap-6 h-full flex-grow pb-6">
+    {% for url, title, text, img_descr, see_more_url, see_more_text in [
         ("/static/imgs/fractal_spiral.png", "Mathematician", "
-            Formal logic, descriptive set theory
+Curious and fond of problem solving, I have a soft spot for learning and teaching mathematics. <br><br>My main interests are logic, set theory and descriptive set theory, topology, algebraic topology and complex analysis.
         ", "Zoom of the mandelbrot set rendered with a home made tool",
-        ""),
+        "/cv", "Curriculum Vitae"),
         ("/static/imgs/asciidots_pi.png", "Computer Science Enthusiast", "
-            Complexity, Algorithms, Language design, Formal verification
+            Always eager to learn how computers work, my playground is filled with
+            algorithms, language design, formal verification, distributed systems and procedural generation.
         ", "A program to compute prime numbers written in Asciidots, an esoteric langage created with @aaronjanse",
-        ""),
-        ("/static/imgs/flyre_gameplay.png", "Game Developper", "
-            I love to create colorful and visually pleasing experiences, and anjoy every aspect of problem solving
+        "https://gitlab.com/ddorn", "Gitlab projects"),
+        ("/static/imgs/flyre_gameplay.png", "Game Developer", "
+            I love to create colorful and visually pleasing experiences, and sharpen my problem solving at the same time.
         ", "Flyre, a game made with python and pygame, winner of a one week game jam.",
-        "/gamedev"),
+        "/gamedev", "Showcase"),
+        ("/static/imgs/diego/diego.png", "Streamer",
+        "I enjoy helping others and sharing my experience. Streaming game dev and how I work happens on my youtube channel.",
+        "",
+        "https://www.youtube.com/channel/UCN0kVAIU46vvM86CoGtW1Lw",
+        "Youtube Channel",
+        ),
     ] %}
-    <div class="mt-10 mx-auto w-full
-                rounded-xl
-                flex odd:justify-end
+    <a href="{{ see_more_url }}" class=" group
+                lg:rounded-xl text-gray-100
+                transition transform hover:scale-95
                 bg-gray-700 bg-cover bg-center"
-         style="background-image: url('{{ url  }}'); height: 40rem">
-        <div class="w-1/3 p-6 h-full
-            flex flex-col items-center
+         style="background-image: url('{{ url  }}');">
+        <div class="h-full p-4
+            flex flex-col items-center justify-between space-y-4
             bg-gray-800 bg-opacity-70 text-center
-            {{ loop.cycle("rounded-l-xl border-", "rounded-r-xl border-") }}
-">
-            <h2 class="subtitle font-bold">{{ title }}</h2>
-            <p class="mb-auto w-2/3">{{ text }}</p>
-            <p class="text-gray-300 w-4/5 px-2
-                {{ loop.cycle("border-r-4 text-right ml-auto", "border-l-4 text-left mr-auto") }}
-            ">{{ img_descr }}</p>
+            lg:rounded-xl">
+            <h2 class="text-3xl font-bold pt-2">{{ title }}</h2>
+            <p class="w-2/3 flex-grow" style="max-width: 20rem">{{ text | safe }}</p>
+{#            <p class="text-gray-300 w-4/5 px-2#}
+{#                {{ loop.cycle("border-r-4 text-right ml-auto", "border-l-4 text-left mr-auto") }}#}
+{#            ">{{ img_descr }}</p>#}
+            <p class="bg-elevation-24 p-4 self-end
+                transition-colors
+                group-hover:bg-purple-700
+                group-focus:bg-purple-700
+                text-white font-bold rounded-xl">
+               {{ see_more_text }} {{ icon("right-arrow") }}</p>
         </div>
-        {% if see_more_url %}
-            <a class="mt-auto ml-auto mr-4 mb-4  bg-gray-800 p-3
-            text-white font-bold border border-r
-            transform transition
-            hover:translate-x-1
-"
-               href="{{ see_more_url }}">See more {{ icon("right-arrow") }}</a>
-        {% endif %}
-    </div>
+    </a>
     {% endfor %}
+    </div>
 
 {#    <div class="mx-auto md:max-w-screen-xl text-center ">#}
 {#        {{ showcase_card("Flyre",#}

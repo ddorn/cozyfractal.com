@@ -7,16 +7,16 @@
 
     {% endblock %}
 
-    <div class="relative h-screen w-3/4 mx-auto flex flex-col justify-between">
+    <nav class="flex bg-gray-900 z-10 p-4 border-b border-gray-700 bg-opacity-50 text-xl">
+        <div class="flex items-center space-x-4 md:space-x-8 mx-auto">
+            {% for item in ["Home", "Game dev", "Blog", "CV"] %}
+                <a class="hover:underline text-gray-300"
+                   href="/{{ item.replace(' ', '') | lower }}">{{ item }}</a>
+            {% endfor %}
+        </div>
+    </nav>
 
-        <nav class="flex bg-gray-900 z-10 h-12 p-6 border-b border-gray-700 text-xl">
-            <div class="flex items-center space-x-4 md:space-x-8 mx-auto">
-                {% for item in ["Home", "Game dev", "Blog", "CV", "Contact"] %}
-                    <a class="hover:underline text-gray-300"
-                       href="/{{ item.replace(' ', '') | lower }}">{{ item }}</a>
-                {% endfor %}
-            </div>
-        </nav>
+    <div class="relative h-screen w-3/4 mx-auto flex flex-col justify-between">
 
         <div class="flex-grow pb-4">
             {% block content %}

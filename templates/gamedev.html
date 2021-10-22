@@ -2,7 +2,7 @@
 {% from "macros/macros.html" import icon, showcase_card %}
 
 {% block content %}
-    <h1 class="text-6xl md:text-8xl text-center pt-4 pb-12 z-10">Showcase</h1>
+    <h1 class="text-6xl md:text-8xl text-center py-10 z-10">Showcase</h1>
     <div class="text-white lg:max-w-screen-lg max-w-max my-4 rounded-xl bg-gray-900 bg-opacity-80
                 border-orange-500 border-2 shadow-2xl shadow
                 md:flex justify-between mx-auto p-6 space-x-6
@@ -140,7 +140,7 @@
 {% endblock %}
 
 {% block background %}
-    <canvas id="bg-canvas" class="fixed w-screen h-screen overflow-hidden"></canvas>
+    <canvas id="bg-canvas" class="fixed w-screen h-screen overflow-hidden" style="z-index: -1"></canvas>
     <button id="pause-btn" class="fixed bottom-8 right-8 z-10 w-8 h-8
         rounded-full focus:outline-none text-gray-300 hover:text-gray-50">
         {{ icon('pause', 'h-10') }}
