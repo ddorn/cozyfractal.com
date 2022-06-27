@@ -20,11 +20,11 @@ Curious and fond of problem solving, I have a soft spot for learning and teachin
             I love to create colorful and visually pleasing experiences, and sharpen my problem solving at the same time.
         ", "Flyre, a game made with python and pygame, winner of a one week game jam.",
         "/gamedev", "Showcase"),
-        ("/static/imgs/diego/diego.png", "Streamer",
-        "I enjoy helping others and sharing my experience. Streaming game dev and how I work happens on my youtube channel.",
+        ("/static/imgs/diego/diego.png", "",
+        "",
         "",
         "https://www.youtube.com/channel/UCN0kVAIU46vvM86CoGtW1Lw",
-        "Youtube Channel",
+        "",
         ),
     ] %}
     <a href="{{ see_more_url }}" class=" group
@@ -41,12 +41,14 @@ Curious and fond of problem solving, I have a soft spot for learning and teachin
 {#            <p class="text-gray-300 w-4/5 px-2#}
 {#                {{ loop.cycle("border-r-4 text-right ml-auto", "border-l-4 text-left mr-auto") }}#}
 {#            ">{{ img_descr }}</p>#}
+            {% if see_more_text %}
             <p class="bg-elevation-24 p-4 self-end
                 transition-colors
                 group-hover:bg-purple-700
                 group-focus:bg-purple-700
                 text-white font-bold rounded-xl">
                {{ see_more_text }} {{ icon("right-arrow") }}</p>
+            {% endif %}
         </div>
     </a>
     {% endfor %}
