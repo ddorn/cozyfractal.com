@@ -34,6 +34,7 @@
                 <h2 class="subtitle">Education</h2>
                 <ol class="timeline space-y-4">
                 {% for years, study in [
+                    ("2022 - Current", "Lead developper of SPRIG, a decentralised platform to increase trust in mathematical proofs via game theory"),
                     ("2021 - Current", "Master in computer science at EPFL"),
                     (2021, "Graduating from the EPFL with a Bachelor of Mathematics"),
                     ("Spring 2021", "Bachelor project in descriptive set theory, under the supervision of Jacques Duparc"),
@@ -78,7 +79,7 @@
             <div>
 
                 <h2 class="subtitle">Programming
-                    <a class="inline-block" href="https://wakatime.com/@6cbefec3-19b7-4a56-8460-410cc61ac389"><img src="https://wakatime.com/badge/user/6cbefec3-19b7-4a56-8460-410cc61ac389.svg" alt="Total time coded since Oct 16 2017" /></a>
+                    <!-- <a class="inline-block" href="https://wakatime.com/@6cbefec3-19b7-4a56-8460-410cc61ac389"><img src="https://wakatime.com/badge/user/6cbefec3-19b7-4a56-8460-410cc61ac389.svg" alt="Total time coded since Oct 16 2017" /></a> -->
                 </h2>
                 <ul class="gap-4">
                 {% for language, details in [
@@ -87,13 +88,13 @@
                         "7 years experience",
                         "5+ libraries created",
                     ]),
-                    ("Rust", ["10+ projects", ""]),
+                    ("JavaScript", ["6+ projects", "4 Webapps with VueJS", "1 professional project"]),
                     ("Python tools", [
                         "Math libraries: numpy, numba, matplotlib, multiprocessing",
                         "Network: flask, fastAPI, asyncio, discord.py, sockets",
                         "Game dev: pygame, moderngl",
                     ]),
-                    ("JavaScript", ["5+ projects", "3 Webapps with VueJS"]),
+                    ("Rust", ["10+ projects", ""]),
                     ("C++", ["Teaching assistant for two years at EPFL", "Teaching staff on two MOOCS from EPFL"]),
                     ("Other languages", ["6502 Assembly, GLSL", "Coq, Latex, Matlab"]),
                     ("Daily tools", ["bash, i3wm, vim", "git, Gitlab, Github", "OS: NixOS, Arch Linux"]),
@@ -107,17 +108,18 @@
                 {% endfor %}
                 </ul>
 
-                <h2 class="subtitle">Mathematics</h2>
-
-                <h3 class="text-2xl py-4"> Topics of interest</h3>
+                <h2 class="subtitle">Topics of interests</h2>
+                <div class="mb-4 text-sm text-gray-300">
+                    I would be happy to work on any of these topics, especially
+                    if it can have a large positive impact on the world.
+                </div>
                 <div class="grid-cols-2 grid gap-6">
                     {% for topic, details in {
-                        "Logic": "Formal logic, model theory, formal verification",
-                        "Set theory": "Forcing, large cardinals, independance results",
+                        "Global priorities": "Environemnt, Fish & Meat industry, prioritisation, AI Safety & Alignment",
+                        "Logic": "Formal logic, model theory, formal verification, independance",
                         "Descriptive set theory": "Wadge hierachy, infinite games, difference hierarchy",
-                        "Topology": "General topology, Polish spaces, (co)homology",
-                        "Discrete mathematics": "Combinatorics, sequences, recursivity, automata",
-                        "Others": "Fractals, complex analysis, chaos theory, Galois theory, elliptic curves",
+                        "Mathematics": "Fractals, chaos theory, self replicating systems and artificial life.",
+                        "Others": "Game developement, Climbing, Science-fiction, decision theory, hot chocolate"
                     }.items() %}
 
                         <div class="pb-4">
@@ -126,16 +128,18 @@
                         </div>
                     {% endfor %}
                 </div>
+
                 <h3 class="text-2xl pb-4">Papers</h3>
-                <div>
+                <ol class="space-y-4">
                     {% for title, link  in [
+                        ("Between decidable logics: ω-automata and infinite games, Master project", "https://gitlab.com/ddorn/safra/-/raw/master/out/projet.pdf?inline=false"),
                         ("Infinite games in the Baire space, Bachelor thesis", "https://gitlab.com/ddorn/ba6/-/jobs/artifacts/master/raw/projet/projet.pdf?job=pdf"),
                     ] %}
-                        <div class="bg-gray-800 rounded-xl p-4">
+                        <li class="bg-gray-800 rounded-xl p-4">
                             {{ title }} (<a href="{{ link }}">link</a>)
-                        </div>
+                        </li>
                     {% endfor %}
-                </div>
+                </ol>
 
 {#                <h2 class="subtitle">Others skills and intersts</h2>#}
 {#                    Juggle, Climbing 7b, Slackline, Cooking, Photography#}

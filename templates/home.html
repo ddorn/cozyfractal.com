@@ -1,15 +1,14 @@
 {% extends "layouts/base.html" %}
 {% from "macros/macros.html" import showcase_card, icon %}
 {% block body %}
-    <div class="p-8
-                text-center">
+    <div class="p-8 text-center">
         <h1 class="text-4xl font-bold">CozyFractal</h1>
     </div>
 
     <div class="grid lg:grid-cols-2 grid-rows-3 lg:grid-rows-2 lg:w-3/4 mx-auto gap-6 h-full flex-grow pb-6">
     {% for url, title, text, img_descr, see_more_url, see_more_text in [
         ("/static/imgs/fractal_spiral.png", "Mathematician", "
-Curious and fond of problem solving, I have a soft spot for learning and teaching mathematics. <br><br>My main interests are logic, set theory and descriptive set theory, topology, algebraic topology and complex analysis.
+Curious and fond of problem solving, I have a soft spot for learning and teaching mathematics. <br><br>My main interests are logic, set theory, descriptive set theory and complexity theory.
         ", "Zoom of the mandelbrot set rendered with a home made tool",
         "/cv", "Curriculum Vitae"),
         ("/static/imgs/asciidots_pi.png", "Computer Science Enthusiast", "
