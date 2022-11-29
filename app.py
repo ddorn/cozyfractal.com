@@ -27,9 +27,17 @@ async def blog_redirect():
 async def cv(request: Request):
     return templates.TemplateResponse("cv.html", {"request": request})
 
-@app.get("/gamedev", response_class=HTMLResponse)
+@app.get("/showcase", response_class=HTMLResponse)
+async def showcase(request: Request):
+    return templates.TemplateResponse("showcase.html", {"request": request})
+
+@app.get("/gamedev", response_class=RedirectResponse)
 async def gamedev(request: Request):
-    return templates.TemplateResponse("gamedev.html", {"request": request})
+    return RedirectResponse("/showcase")
+
+@app.get("/cvpdf", response_class=RedirectResponse)
+async def cvpdf_redirect():
+    return RedirectResponse("https://github.com/ddorn/cv/raw/master/out/resume.pdf")
 
 # @app.errorhandler(404)
 # def page_not_found(_):

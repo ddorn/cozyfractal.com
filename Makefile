@@ -9,7 +9,7 @@ run:
 	poetry run uvicorn app:app --port $${PORT:-8400}
 
 dev:
-	@DEV=true make run
+	DEV=true poetry run uvicorn app:app --port $${PORT:-8400} --reload
 
 tw:
 	npm run tw
