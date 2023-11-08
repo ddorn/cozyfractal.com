@@ -8,7 +8,7 @@
                 md:flex justify-between mx-auto p-6 space-x-6
                 ">
         <div class="md:min-w-max text-center flex flex-col items-center h-full ">
-                <h2 class="text-xl text-gray-400">Latest creation</h2>
+                <h2 class="text-xl text-gray-400">Highlight</h2>
                 <div class="text-4xl font-bold swag-text my-2">Flyre</div>
                 <div class="w-4/5 mb-4">
                     A pixel-art shoot-em-up with a skill tree.
@@ -22,7 +22,7 @@
                 <div class="space-y-2">
                 {% for icon_name, url, text in (
                         ("itch", "https://cozyfractal.itch.io/flyre", "Download on itch.io"),
-                        ("gitlab", "https://gitlab.com/ddorn/flyre", "Check the source code"),
+                        ("github", "https://github.com/ddorn/flyre", "Check the source code"),
                         ("jam", "https://itch.io/jam/pygame-community-easter-jam", "Winner of a one week game jam"),
                     ) %}
                     <a href="{{ url }}" class="block w-full p-3
@@ -66,7 +66,7 @@
                 "flyre.png",
                 "python pygame",
                 youtube="https://www.youtube.com/watch?v=_AwWQzmCyjg",
-                gitlab="https://gitlab.com/ddorn/flyre",
+                github="https://github.com/ddorn/flyre",
                 itch="https://cozyfractal.itch.io/flyre",
                 jam="https://itch.io/jam/pygame-community-easter-jam"
             ) }} -->
@@ -75,7 +75,7 @@
                 "thefractalspace.png",
                 "python javascript flask",
                 web="https://thefractal.space",
-                gitlab="https://gitlab.com/ddorn/thefractal.space"
+                github="https://github.com/ddorn/thefractal.space"
             ) }}
         {{ showcase_card("The Asciidots esolang",
                 "A 2-dimensional and visual esoteric programming language that I co-created during high-school.",
@@ -83,6 +83,19 @@
                 "python",
                 web="https://ajanse.me/asciidots/language/",
                 github="https://github.com/aaronjanse/asciidots",
+            ) }}
+        {{ showcase_card("SPRIG",
+                "A decentralised protocol to increase trust in mathematical proof using partial formal proofs, blockchain and game theory.",
+                "sprig.png",
+                "python javascript reach vue fastapi algorand",
+                web="https://sprig.therandom.space",
+                github="https://github.com/SprigProofs/SPRIG",
+            ) }}
+        {{ showcase_card("Vent Frais",
+                "A set of interesting discussion questions with a nice colorful design.",
+                "vent_frais.png",
+                "python pygame",
+                github="https://github.com/ddorn/vent-frais"
             ) }}
         {{ showcase_card("Mixed Feelings",
                 "Meet strange creatures with mixed feelings in this beautiful game made in 24 hours for the Orbital Game Jam!",
@@ -97,14 +110,14 @@
                 "thecastaway.png",
                 "python pygame",
                 jam="https://pyweek.org/e/the-casta-way/",
-                gitlab="https://gitlab.com/ddorn/the-casta-way"
+                github="https://github.com/ddorn/the-casta-way"
             ) }}
         {{ showcase_card("Le Maître de la Gravité",
                 "A short plateformer where you solve puzzles by modifying gravity.<br><br>School project aimed at showing surprising effects of gravity.",
                 "gravity.png",
                 "godot",
                 itch="https://cozyfractal.itch.io/gravity",
-                gitlab="https://gitlab.com/ddorn/gravity"
+                github="https://github.com/ddorn/gravity"
             ) }}
         {{ showcase_card("Chaos",
                 "A one-stick shooter made only with particles.<br><br>Made in one weekend in Rust for the 10th Alakajam.",
@@ -112,7 +125,7 @@
                 "rust",
                 jam="https://alakajam.com/10th-alakajam/984/chaos/",
                 itch="https://cozyfractal.itch.io/chaos",
-                gitlab="https://gitlab.com/ddorn/alakajam-chaos"
+                github="https://github.com/ddorn/alakajam-chaos"
             )  }}
         {{ showcase_card("Butterfly Destroyers",
                 "Fight the butterfly overpopulation by shooting them down!<br><br>A 2.5D shooter with a lot of polish. Team entry winner of PyWeek 29 !",
@@ -127,7 +140,7 @@
                 "therandomspace.png",
                 "javascript python flask",
                 web="https://therandom.space",
-                gitlab="https://gitlab.com/ddorn/therandom.space"
+                github="https://github.com/ddorn/therandom.space"
             )  }}
         <!-- {{ showcase_card("Pygame discord challenges",
                 "Design of weekly challenges for the comunity discord and creation of a showcase to see all the amazing submissions.",
@@ -140,20 +153,13 @@
                 "shadows.png",
                 'python pygame numpy experiment',
                 youtube="https://www.youtube.com/watch?v=961uJkNYThI",
-                gitlab="https://gitlab.com/ddorn/shadow"
+                github="https://github.com/ddorn/shadow"
             ) }}
         {{ showcase_card("48hours",
                 "A plateformer with a destructive llama.<br><br>My first full game, made with a friend in 48 hours. Note: we suck at level design!",
                 "48hours.png",
                 "python pygame",
-                gitlab="https://gitlab.com/lama-corp/48hours"
-            ) }}
-        {{ showcase_card("SPRIG (wip)",
-                "A decentralised protocol to increase trust in mathematical proof using partial formal proofs, blockchain and game theory.",
-                "sprig.png",
-                "python javascript reach vue fastapi algorand",
-                web="https://sprig.therandom.space",
-                github="https://github.com/SprigProofs/SPRIG",
+                github="https://gitlab.com/lama-corp/48hours"
             ) }}
     </div>
 
