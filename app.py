@@ -23,9 +23,17 @@ async def home_redirect():
 async def blog_redirect():
     return RedirectResponse("https://ddorn.gitlab.io")
 
-@app.get("/cv", response_class=HTMLResponse)
-async def cv(request: Request):
-    return templates.TemplateResponse("cv.html", {"request": request})
+# @app.get("/cv", response_class=HTMLResponse)
+# async def cv(request: Request):
+    # return templates.TemplateResponse("cv.html", {"request": request})
+
+@app.get("/cv", response_class=RedirectResponse)
+async def cv_redirect():
+    return RedirectResponse("https://github.com/ddorn/cv/raw/master/out/resume.pdf")
+
+@app.get("/cvpdf", response_class=RedirectResponse)
+async def cvpdf_redirect():
+    return RedirectResponse("https://github.com/ddorn/cv/raw/master/out/resume.pdf")
 
 @app.get("/showcase", response_class=HTMLResponse)
 async def showcase(request: Request):
@@ -34,10 +42,6 @@ async def showcase(request: Request):
 @app.get("/gamedev", response_class=RedirectResponse)
 async def gamedev(request: Request):
     return RedirectResponse("/showcase")
-
-@app.get("/cvpdf", response_class=RedirectResponse)
-async def cvpdf_redirect():
-    return RedirectResponse("https://github.com/ddorn/cv/raw/master/out/resume.pdf")
 
 # @app.errorhandler(404)
 # def page_not_found(_):
