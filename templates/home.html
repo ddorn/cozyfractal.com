@@ -7,24 +7,28 @@
 
     <div class="grid lg:grid-cols-2 grid-rows-3 lg:grid-rows-2 lg:w-3/4 mx-auto gap-6 h-full flex-grow pb-6">
     {% for url, title, text, img_descr, see_more_url, see_more_text in [
-        ("/static/imgs/fractal_spiral.png", "Mathematician", "
-Curious and fond of problem solving, I have a soft spot for learning and teaching mathematics. <br><br>My main interests are logic, set theory, descriptive set theory and complexity theory.
+        ("/static/imgs/fractal_spiral.png", "Budding AI Safety Researcher", "
+            As more capable and autonomous AI systems are being developed, I want to make sure it goes well and we avoid potentially catastrophic outcomes.
+            <br><br>
+            Curious and fond of problem solving, I have a Bachelor's degree in Mathematics and I am "
+            + '<span class="font-black text-purple-400">looking for work</span> '
+            + " as soon as I finish my Master's degree in CS (july 2024).
         ", "Zoom of the mandelbrot set rendered with a home made tool",
         "/cv", "Curriculum Vitae"),
         ("/static/imgs/asciidots_pi.png", "Computer Science Enthusiast", "
             Always eager to learn how computers work, my playground is filled with
-            algorithms, language design, formal verification, distributed systems and procedural generation.
+            algorithms, language design, formal verification, machine learning and procedural generation.
         ", "A program to compute prime numbers written in Asciidots, an esoteric langage created with @aaronjanse",
-        "https://github.com/ddorn", "github projects"),
+        "https://github.com/ddorn", "Github projects"),
         ("/static/imgs/flyre_gameplay.png", "Game Developer", "
             I love to create colorful and visually pleasing experiences, and sharpen my problem solving at the same time.
         ", "Flyre, a game made with python and pygame, winner of a one week game jam.",
         "/showcase", "Showcase"),
-        ("/static/imgs/diego/diego.png", "",
+        ("/static/imgs/diego/diego.png", "Diego Dorn",
         "",
-        "",
+        "A picture of me",
         "https://www.admonymous.co/diego",
-        "",
+        "Feedback",
         ),
     ] %}
     <a href="{{ see_more_url }}" class=" group

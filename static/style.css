@@ -1253,6 +1253,10 @@ video {
   font-weight: 700;
 }
 
+.font-black {
+  font-weight: 900;
+}
+
 .italic {
   font-style: italic;
 }
@@ -1280,6 +1284,11 @@ video {
 .text-gray-600 {
   --tw-text-opacity: 1;
   color: rgba(82, 82, 82, var(--tw-text-opacity));
+}
+
+.text-purple-400 {
+  --tw-text-opacity: 1;
+  color: rgba(192, 132, 252, var(--tw-text-opacity));
 }
 
 .text-orange-500 {
