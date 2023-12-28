@@ -17,3 +17,5 @@ tw:
 tw-prod:
 	npm run tw-prod
 
+deploy:
+	ssh pine "cd /srv/cozyfractal.com && git pull"

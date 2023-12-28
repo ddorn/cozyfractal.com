@@ -5,39 +5,40 @@
     <h1 class="text-6xl md:text-8xl text-center py-10 ">Showcase</h1>
     <div class="text-white lg:max-w-screen-lg max-w-max my-4 rounded-xl bg-gray-900 bg-opacity-80
                 border-orange-500 border-2 shadow-2xl shadow
-                md:flex justify-between mx-auto p-6 space-x-6
+                md:flex justify-between mx-auto p-6
                 ">
         <div class="md:min-w-max text-center flex flex-col items-center h-full ">
-                <h2 class="text-xl text-gray-400">Highlight</h2>
-                <div class="text-4xl font-bold swag-text my-2">Flyre</div>
-                <div class="w-4/5 mb-4">
-                    A pixel-art shoot-em-up with a skill tree.
-                </div>
-                <div class="flex justify-center space-x-3 mb-6">
-                    {% for name in "python pygame".split() %}
-                        <img src="{{ url_for('static', path='/imgs/' + name + '.png') }}" alt="{{ name }} logo"
-                             class="h-6" data-tooltip="{{ name }}">
-                    {% endfor %}
-                </div>
-                <div class="space-y-2">
-                {% for icon_name, url, text in (
-                        ("itch", "https://cozyfractal.itch.io/flyre", "Download on itch.io"),
-                        ("github", "https://github.com/ddorn/flyre", "Check the source code"),
-                        ("jam", "https://itch.io/jam/pygame-community-easter-jam", "Winner of a one week game jam"),
-                    ) %}
-                    <a href="{{ url }}" class="block w-full p-3
-                        text-left text-white
-                        bg-gray-800 rounded
-                        transform transition hover:translate-x-2
-                        hover:bg-gray-700
-                    ">
-                        <img src="{{ url_for('static', path='imgs/' + icon_name + '.png') }}" alt="{{ name }} logo"
-                             class="h-6 inline pr-2 transform transition hover:scale-110"> <!-- data-tooltip="{{ icon_name }}"> -->
-                        {{ text }}
-                    </a>
+            <h2 class="text-xl text-gray-400">Highlight</h2>
+            <div class="text-4xl font-bold swag-text my-2">Flyre</div>
+            <div class="w-4/5 mb-4">
+                A pixel-art shoot-em-up with a skill tree.
+            </div>
+            <div class="flex justify-center space-x-3 mb-6">
+                {% for name in "python pygame".split() %}
+                    <img src="{{ url_for('static', path='/imgs/' + name + '.png') }}" alt="{{ name }} logo"
+                            class="h-6" data-tooltip="{{ name }}">
                 {% endfor %}
-                </div>
+            </div>
+            <div class="space-y-2">
+            {% for icon_name, url, text in (
+                    ("itch", "https://cozyfractal.itch.io/flyre", "Download on itch.io"),
+                    ("github", "https://github.com/ddorn/flyre", "Check the source code"),
+                    ("jam", "https://itch.io/jam/pygame-community-easter-jam", "Winner of a one week game jam"),
+                ) %}
+                <a href="{{ url }}" class="block w-full p-3
+                    text-left text-white
+                    bg-gray-800 rounded
+                    transform transition hover:translate-x-2
+                    hover:bg-gray-700
+                ">
+                    <img src="{{ url_for('static', path='imgs/' + icon_name + '.png') }}" alt="{{ name }} logo"
+                            class="h-6 inline pr-2 transform transition hover:scale-110"> <!-- data-tooltip="{{ icon_name }}"> -->
+                    {{ text }}
+                </a>
+            {% endfor %}
+            </div>
         </div>
+
         <div class="hidden lg:block w-full h-96 relative">
             <iframe class="absolute top-0 left-0 w-full h-full"
                     width="560" height="315"
@@ -58,11 +59,16 @@
                 allowfullscreen></iframe>
     </div>
 
-    <div class="mb-16"></div>
+    <ul class="mb-8 mt-8 flex justify-center space-x-24 text-2xl">
+        <li class="items-center flex"><span class="w-8 border-t-2 inline-block border-white mr-3"></span>Research</li>
+        <li class="items-center flex"><span class="w-8 border-t-2 inline-block border-purple-500 mr-3"></span>Web/app dev</li>
+        <li class="items-center flex"><span class="w-8 border-t-2 inline-block border-orange-500 mr-3"></span>Game dev</li>
+    </ul>
 
     <div class="mx-auto md:max-w-screen-xl text-center" id="showcase-grid">
         <!-- {{ showcase_card("Flyre",
                 "A pixelart shmup with a skilltree.<br>Winner of the Pygame Community Easter Jam, that lasted a week.",
+                "game",
                 "flyre.png",
                 "python pygame",
                 youtube="https://www.youtube.com/watch?v=_AwWQzmCyjg",
@@ -72,6 +78,7 @@
             ) }} -->
         {{ showcase_card("The Asciidots programming language",
                 "A 2-dimensional and visual esoteric programming language that I co-created during high-school.",
+                "app",
                 "asciidots_pi.png",
                 "python",
                 web="https://ajanse.me/asciidots/language/",
@@ -79,6 +86,7 @@
             ) }}
         {{ showcase_card("SPRIG",
                 "A decentralised protocol to increase trust in mathematical proof using partial formal proofs, blockchain and game theory.",
+                "app",
                 "sprig.png",
                 "python javascript reach vue fastapi algorand",
                 web="https://sprig.therandom.space",
@@ -86,6 +94,7 @@
             ) }}
         {{ showcase_card("The Fractal Space",
                 "A random fractal generator. <br>Enter your name or anything, get a fractal!",
+                "app",
                 "thefractalspace.png",
                 "python javascript flask",
                 web="https://thefractal.space",
@@ -93,6 +102,7 @@
             ) }}
         {{ showcase_card("Goal Misgeneralization as Implicit Goal Conditioning",
                 "A Neurips workshop paper showing that out-of-distribution generalization can vary a lot depending on the seed.",
+                "paper",
                 "gm_paper.png",
                 "python pytorch",
                 pdf="https://openreview.net/pdf?id=QT4tXTqTTr",
@@ -101,12 +111,14 @@
             ) }}
         {{ showcase_card("Vent Frais",
                 "A set of interesting discussion questions with a nice colorful design.",
+                "app",
                 "vent_frais.png",
                 "python pygame",
                 github="https://github.com/ddorn/vent-frais"
             ) }}
         {{ showcase_card("Mixed Feelings",
                 "Meet strange creatures with mixed feelings in this beautiful game made in 24 hours for the Orbital Game Jam!",
+                "game",
                 "mixed_feelings.png",
                 "python pygame",
                 itch="https://avariengien.itch.io/mixed-feelings",
@@ -115,6 +127,7 @@
             ) }}
         {{ showcase_card("The Casta Way",
                 "A game about going up a golden road and... beer.<br>It was made in under 4 days with my little brother for Pyweek30",
+                "game",
                 "thecastaway.png",
                 "python pygame",
                 jam="https://pyweek.org/e/the-casta-way/",
@@ -122,6 +135,7 @@
             ) }}
         {{ showcase_card("Le Maître de la Gravité",
                 "A short plateformer where you solve puzzles by modifying gravity.<br>School project aimed at showing surprising effects of gravity.",
+                "game",
                 "gravity.png",
                 "godot",
                 itch="https://cozyfractal.itch.io/gravity",
@@ -129,6 +143,7 @@
             ) }}
         {{ showcase_card("Chaos",
                 "A one-stick shooter made only with particles.<br>Made in one weekend in Rust for the 10th Alakajam.",
+                "game",
                 "chaos.png",
                 "rust",
                 jam="https://alakajam.com/10th-alakajam/984/chaos/",
@@ -137,6 +152,7 @@
             )  }}
         {{ showcase_card("Butterfly Destroyers",
                 "Fight the butterfly overpopulation by shooting them down! A 2.5D shooter with a lot of polish. Team entry winner of PyWeek 29!",
+                "game",
                 "butterflydestroyers.png",
                 "python pygame",
                 jam="https://pyweek.org/e/PythonixCoders/",
@@ -145,6 +161,7 @@
             ) }}
         {{ showcase_card("The Random Space",
                 "A generator of random french proverbs, movie titles or town names.",
+                "app",
                 "therandomspace.png",
                 "javascript python flask",
                 web="https://therandom.space",
@@ -152,12 +169,14 @@
             )  }}
         <!-- {{ showcase_card("Pygame discord challenges",
                 "Design of weekly challenges for the comunity discord and creation of a showcase to see all the amazing submissions.",
+                "app",
                 "weekly_challenges.png",
                 "python pygame",
                 github="https://github.com/pygame-community/WeeklyChallenges",
             ) }} -->
         {{ showcase_card("Shadows",
                 "A pygame and numpy experiment with lightning and shadows.",
+                "game",
                 "shadows.png",
                 'python pygame numpy experiment',
                 youtube="https://www.youtube.com/watch?v=961uJkNYThI",
@@ -165,6 +184,7 @@
             ) }}
         {{ showcase_card("48hours",
                 "A plateformer with a destructive llama.<br>My first full game, made with a friend in 48 hours. Note: we suck at level design!",
+                "game",
                 "48hours.png",
                 "python pygame",
                 github="https://gitlab.com/lama-corp/48hours"

@@ -66,11 +66,15 @@
 {% endmacro %}
 
 
-{% macro showcase_card(title, legend, image, icons) %} {# kwargs are accepted and are icon_name=url #}
+{% macro showcase_card(title, legend, kind, image, icons) %} {# kwargs are accepted and are icon_name=url #}
     <div class="text-white bg-elevation-1 mb-8 rounded-xl grid-item w-80
-                border-elevation-1 border-2
+                border-2 {{ {
+                    "game": "border-orange-500",
+                    "app": "border-purple-500",
+                    "paper": "border-white",
+                }[kind] }}
                 transition
-                transform  hover:scale-110 swag-hover">
+                transform hover:scale-110 swag-hover">
 
         <div class="h-52 relative">
             <img class="w-full h-full object-center object-cover bg-clip-content
@@ -122,7 +126,7 @@
                                         "web": 'Check the website',
                                         "youtube": 'Watch demo',
                                         "itch": 'Get it on itch!',
-                                        "pdf": 'Read the paper',
+                                        "pdf": 'Get the pdf',
                                     }[icon_name]
                                 }}
                             </span>
