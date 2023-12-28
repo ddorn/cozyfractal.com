@@ -1,19 +1,15 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-    purge: {
-        // enabled: false,
-        content: [
-            'templates/**/*.html',
-            'templates/*.html'
-        ]
-    },
-    darkMode: false, // or 'media' or 'class'
+    content: [
+        'templates/**/*.html',
+        'templates/*.html'
+    ],
     theme: {
         colors: {
             black: colors.black,
             white: colors.white,
-            gray: colors.trueGray,
+            gray: colors.neutral,
             purple: colors.purple,
             orange: {
                 50: '#fff6e5',
@@ -56,16 +52,6 @@ module.exports = {
             fontFamily: {
                 sans: [ 'Gilroy' ]
             },
-        },
-    },
-    variants: {
-        extend: {
-            backgroundColor: ['odd', 'group-focus'],
-            zIndex: ['hover'],
-            textAlign: ['odd'],
-            justifyContent: ['odd'],
-            borderRadius: ['odd'],
-            borderWidth: ['odd'],
         },
     }
 }
