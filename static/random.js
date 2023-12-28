@@ -114,13 +114,7 @@ const translations = {
     reach: 'Language: Reach',
     algorand: 'Runs on the Algorand blockchain',
     numpy: 'Library: Numpy',
-    // On links
-    jam: 'Game jam page',
-    gitlab: 'See the source code',
-    github: 'See the source code',
-    web: 'Go to the website',
-    youtube: 'Watch demo',
-    itch: 'Get it on itch!',
+    pytorch: 'Library: Pytorch',
 };
 // Automatically creat tooltips for everything with a data-tooltip attribute
 document.querySelectorAll('[data-tooltip]').forEach(elem => {

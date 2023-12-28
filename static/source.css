@@ -210,3 +210,13 @@ a {
     width: 2rem;
     border-top: #f5f5f5 2px solid;
 }
+
+.columns-3-diego {
+    columns: 3;
+    column-gap: 2rem;
+}
+
+.last-rounded-b-xl:last-child {
+    border-bottom-left-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem;
+}

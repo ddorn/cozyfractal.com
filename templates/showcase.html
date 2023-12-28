@@ -2,7 +2,7 @@
 {% from "macros/macros.html" import icon, showcase_card %}
 
 {% block content %}
-    <h1 class="text-6xl md:text-8xl text-center py-10 z-10">Showcase</h1>
+    <h1 class="text-6xl md:text-8xl text-center py-10 ">Showcase</h1>
     <div class="text-white lg:max-w-screen-lg max-w-max my-4 rounded-xl bg-gray-900 bg-opacity-80
                 border-orange-500 border-2 shadow-2xl shadow
                 md:flex justify-between mx-auto p-6 space-x-6
@@ -60,9 +60,9 @@
 
     <div class="mb-16"></div>
 
-    <div class="mx-auto md:max-w-screen-xl text-center ">
+    <div class="mx-auto md:max-w-screen-xl text-center" id="showcase-grid">
         <!-- {{ showcase_card("Flyre",
-                "A pixelart shmup with a skilltree.<br><br>Winner of the Pygame Community Easter Jam, that lasted a week.",
+                "A pixelart shmup with a skilltree.<br>Winner of the Pygame Community Easter Jam, that lasted a week.",
                 "flyre.png",
                 "python pygame",
                 youtube="https://www.youtube.com/watch?v=_AwWQzmCyjg",
@@ -70,14 +70,7 @@
                 itch="https://cozyfractal.itch.io/flyre",
                 jam="https://itch.io/jam/pygame-community-easter-jam"
             ) }} -->
-        {{ showcase_card("The Fractal Space",
-                "A random fractal generator. <br><br>Enter your name or anything, get a fractal !",
-                "thefractalspace.png",
-                "python javascript flask",
-                web="https://thefractal.space",
-                github="https://github.com/ddorn/thefractal.space"
-            ) }}
-        {{ showcase_card("The Asciidots esolang",
+        {{ showcase_card("The Asciidots programming language",
                 "A 2-dimensional and visual esoteric programming language that I co-created during high-school.",
                 "asciidots_pi.png",
                 "python",
@@ -90,6 +83,21 @@
                 "python javascript reach vue fastapi algorand",
                 web="https://sprig.therandom.space",
                 github="https://github.com/SprigProofs/SPRIG",
+            ) }}
+        {{ showcase_card("The Fractal Space",
+                "A random fractal generator. <br>Enter your name or anything, get a fractal!",
+                "thefractalspace.png",
+                "python javascript flask",
+                web="https://thefractal.space",
+                github="https://github.com/ddorn/thefractal.space"
+            ) }}
+        {{ showcase_card("Goal Misgeneralization as Implicit Goal Conditioning",
+                "A Neurips workshop paper showing that out-of-distribution generalization can vary a lot depending on the seed.",
+                "gm_paper.png",
+                "python pytorch",
+                pdf="https://openreview.net/pdf?id=QT4tXTqTTr",
+                web="https://openreview.net/forum?id=QT4tXTqTTr",
+                github="https://github.com/ddorn/seed-dependent-goals"
             ) }}
         {{ showcase_card("Vent Frais",
                 "A set of interesting discussion questions with a nice colorful design.",
@@ -106,21 +114,21 @@
                 jam="https://itch.io/jam/orbital-game-jam-4",
             ) }}
         {{ showcase_card("The Casta Way",
-                "A game about going up a golden road and... beer.<br><br>It was made in under 4 days with my little brother for Pyweek30",
+                "A game about going up a golden road and... beer.<br>It was made in under 4 days with my little brother for Pyweek30",
                 "thecastaway.png",
                 "python pygame",
                 jam="https://pyweek.org/e/the-casta-way/",
                 github="https://github.com/ddorn/the-casta-way"
             ) }}
         {{ showcase_card("Le Maître de la Gravité",
-                "A short plateformer where you solve puzzles by modifying gravity.<br><br>School project aimed at showing surprising effects of gravity.",
+                "A short plateformer where you solve puzzles by modifying gravity.<br>School project aimed at showing surprising effects of gravity.",
                 "gravity.png",
                 "godot",
                 itch="https://cozyfractal.itch.io/gravity",
                 github="https://github.com/ddorn/gravity"
             ) }}
         {{ showcase_card("Chaos",
-                "A one-stick shooter made only with particles.<br><br>Made in one weekend in Rust for the 10th Alakajam.",
+                "A one-stick shooter made only with particles.<br>Made in one weekend in Rust for the 10th Alakajam.",
                 "chaos.png",
                 "rust",
                 jam="https://alakajam.com/10th-alakajam/984/chaos/",
@@ -128,7 +136,7 @@
                 github="https://github.com/ddorn/alakajam-chaos"
             )  }}
         {{ showcase_card("Butterfly Destroyers",
-                "Fight the butterfly overpopulation by shooting them down!<br><br>A 2.5D shooter with a lot of polish. Team entry winner of PyWeek 29 !",
+                "Fight the butterfly overpopulation by shooting them down! A 2.5D shooter with a lot of polish. Team entry winner of PyWeek 29!",
                 "butterflydestroyers.png",
                 "python pygame",
                 jam="https://pyweek.org/e/PythonixCoders/",
@@ -156,12 +164,24 @@
                 github="https://github.com/ddorn/shadow"
             ) }}
         {{ showcase_card("48hours",
-                "A plateformer with a destructive llama.<br><br>My first full game, made with a friend in 48 hours. Note: we suck at level design!",
+                "A plateformer with a destructive llama.<br>My first full game, made with a friend in 48 hours. Note: we suck at level design!",
                 "48hours.png",
                 "python pygame",
                 github="https://gitlab.com/lama-corp/48hours"
             ) }}
     </div>
+
+    <script src="/static/masonry.pkgd.min.js"></script>
+    <script >
+        var elem = document.querySelector('#showcase-grid');
+        var msnry = new Masonry( elem, {
+        // options
+        itemSelector: '.grid-item',
+        gutter: 32,
+        fitWidth: true,
+        horizontalOrder: true,
+        });
+    </script>
 
     <script src="{{ url_for('static', path='random.js') }}"></script>
     <script>

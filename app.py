@@ -23,9 +23,9 @@ async def home_redirect():
 async def blog_redirect():
     return RedirectResponse("https://ddorn.gitlab.io")
 
-# @app.get("/cv", response_class=HTMLResponse)
-# async def cv(request: Request):
-    # return templates.TemplateResponse("cv.html", {"request": request})
+@app.get("/oldcv", response_class=HTMLResponse)
+async def oldcv(request: Request):
+    return templates.TemplateResponse("cv.html", {"request": request})
 
 @app.get("/cv", response_class=RedirectResponse)
 async def cv_redirect():
