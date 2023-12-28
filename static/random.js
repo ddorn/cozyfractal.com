@@ -115,6 +115,7 @@ const translations = {
     algorand: 'Runs on the Algorand blockchain',
     numpy: 'Library: Numpy',
     pytorch: 'Library: Pytorch',
+    numba: 'Library: Numba',
 };
 // Automatically creat tooltips for everything with a data-tooltip attribute
 document.querySelectorAll('[data-tooltip]').forEach(elem => {
