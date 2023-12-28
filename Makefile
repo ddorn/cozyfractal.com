@@ -9,7 +9,6 @@ run:
 	poetry run uvicorn app:app --port $${PORT:-8400} --host 0.0.0.0
 
 dev:
-	make tw&
 	DEV=true poetry run uvicorn app:app --port $${PORT:-8400} --reload
 
 tw:
