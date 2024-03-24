@@ -43,6 +43,10 @@ async def showcase(request: Request):
 async def gamedev(request: Request):
     return RedirectResponse("/showcase")
 
+@app.get("/vent-frais", response_class=RedirectResponse)
+async def vent_frais_redirect():
+    return RedirectResponse("https://github.com/ddorn/vent-frais")
+
 # @app.errorhandler(404)
 # def page_not_found(_):
 #     return render_template('404.html'), 404
