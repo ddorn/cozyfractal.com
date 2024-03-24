@@ -18,4 +18,4 @@ tw-prod:
 	npx tailwindcss -i ./static/source.css -o ./static/style.css
 
 deploy:
-	ssh pine "cd /srv/cozyfractal.com && git pull"
+	ssh pine "cd /srv/cozyfractal.com && git pull && systemctl restart cozyfractal"
