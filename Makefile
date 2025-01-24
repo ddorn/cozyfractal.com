@@ -7,6 +7,9 @@ install-dev: install
 run:
 	uv run --frozen uvicorn src.app:app --port $${PORT:-8400} --host 0.0.0.0
 
+run-server:
+	/root/.local/bin/uv run --frozen uvicorn src.app:app --port $${PORT:-8400} --host 0.0.0.0
+
 dev:
 	DEV=true uv run --frozen uvicorn app:app --port $${PORT:-8400} --reload
 
