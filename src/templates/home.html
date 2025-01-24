@@ -1,0 +1,114 @@
+{% extends "layouts/base.html" %}
+{% from "macros/macros.html" import showcase_card, icon %}
+{% block body %}
+    <div class="p-8 mt-4 max-w-xl xl:max-w-3xl mx-auto font-serif min-h-screen text-lg flex flex-col">
+
+
+        <ul class="flex space-x-4 mt-1 justify-end" role="list">
+            <li><a href="/cv">CV</a></li>
+            <li><a href="https://github.com/ddorn">Github</a></li>
+            <li><a href="/showcase" class="!swag-text">Fancy showcase</a></li>
+        </ul>
+
+        <article class="mt-4">
+
+            <h1 class="text-3xl font-bold">Diego Dorn</h1>
+
+            <p id="intro-p" class="">I'm trying to make this world a better place for everyone.</p>
+
+            <h2>Preventing risks from AI systems.</h2>
+            <ul>
+                <li>
+                    Creation of the <a href="https://github.com/CentreSecuriteIA/BELLS">Benchmarks for the Evaluatation of LLM Supervision</a> (BELLS) at
+                <a href="https://www.securite-ia.fr/">CeSIA</a>.
+                </li>
+                <li>Teaching at <a href="https://ml4good.org">10-day summer schools</a>
+                    on systemic risk from AI </li>
+                <li>The
+                    <a href="https://go.epfl.ch/sail">Safe AI Lausanne</a>
+                    student club
+                </li>
+            </ul>
+
+            <h2>Developing tools to empower humans.</h2>
+            <ul>
+                <li><a href="https://github.com/ddorn/pucoti">Pucoti</a>, a purposeful countdown timer</li>
+                <li><a href="https://github.com/ddorn/VentFrais">Vent Frais</a>, a deck of cards to foster deep discussions</li>
+                <li>A
+                    <a href="https://sprigproofs.org">distributed platform</a>
+                    to increase confidence in mathematical proofs</li>
+                <li>A training interface for <a href="https://www.effectivedisagreement.org/">Effectively Handling Disagreements</a></li>
+            </ul>
+
+<!--
+            <h2>Ending animal exploitation.</h2>
+            <ul>
+                <li></li>
+            </ul> -->
+
+        <!-- <h2>Publications.</h2>
+            <ul>
+                <li></li>
+            </ul> -->
+
+            <h2>Recommended readings.</h2>
+            <ul>
+                <li><a href="https://www.goodreads.com/book/show/197773418-slow-productivity">Slow Poductivity</a> by Cal Newport</li>
+                <li><a href="https://www.goodreads.com/book/show/525304.Star_Maker">Starmaker</a> by Olaf Stapledon</li>
+                <!-- Axiomatic, Greg egan -->
+                <!-- <li>... to be continued</li> -->
+            </ul>
+
+            <h2>Other.</h2>
+            <ul>
+                <li>
+                    <a href="https://ddorn.notion.site/Hot-Chocolate-The-Albert-d167970eece548b8935094df712e64ba?pvs=4">
+                        My hot chocolate recipe schema</a></li>
+                <li>
+                    A <a href="https://ajanse.me/asciidots/language/">2D esolang</a> I co-created
+            </ul>
+
+            <p class="text-right text-gray-600 mt-8">
+                Last updated on 2025-01-24
+            </p>
+            <!-- <h2>TODO: Promotional bio.</h2> -->
+        </article>
+
+    </div>
+    <style>
+        p {
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+        }
+        ul:not(.flex) {
+            list-style-type: disc;
+            list-style-position: outside;
+            margin-left: 1rem;
+        }
+        h2 {
+            /* color: #FC5A70; */
+            color: #B7FFB7;
+            margin-top: 1.5rem;
+            /* font-size: 1.25rem; */
+        }
+        a {
+            /* color: #ffa500 !important; */
+            color: #FFE091;
+        }
+        :focus {
+            /* Nice ring */
+            outline: 2px solid #5AD4E6;
+            outline-offset: 0.2rem;
+            border-radius: 0.2rem;
+        }
+        #intro-p {
+            /* color: #FC5A70; */
+            color: #FD8E4E;
+            /* color: #5AD4E6; */
+            /* color: #948AE3; */
+            /* color: #B7FFB7; */
+        }
+    </style>
+
+    <script src="{{ url_for('static', path='random.js') }}"></script>
+{% endblock %}

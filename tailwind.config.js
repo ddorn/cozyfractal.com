@@ -2,8 +2,11 @@ const colors = require('tailwindcss/colors')
 
 module.exports = {
     content: [
-        'templates/**/*.html',
-        'templates/*.html'
+        'src/templates/**/*.html',
+        'src/templates/*.html'
+    ],
+    plugins: [
+        require('@tailwindcss/typography'),
     ],
     theme: {
         colors: {
@@ -50,7 +53,8 @@ module.exports = {
                 },
             },
             fontFamily: {
-                sans: [ 'Gilroy' ]
+                sans: [ 'Gilroy' ],
+                serif: [ 'Avenir' ],
             },
         },
     }

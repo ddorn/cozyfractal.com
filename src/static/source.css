@@ -27,7 +27,34 @@
     font-style: normal;
 }
 
-/* END Gilroy Bold *
+/* END Gilroy Bold */
+
+
+@font-face {
+  font-family: "Avenir";
+  src: url("/static/fonts/avenir/AvenirLTStd-Medium.otf");
+  src: local("Avenir Medium"), local("Avenir-Medium"), url("/static/fonts/avenir/AvenirLTStd-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("/static/fonts/avenir/AvenirLTStd-Black.otf");
+  src: local("Avenir Black"), local("Avenir-Black"), url("/static/fonts/avenir/AvenirLTStd-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("/static/fonts/avenir/AvenirLTStd-MediumOblique.otf");
+  src: local("Avenir Medium Oblique"), local("Avenir-Medium-Oblique"), url("/static/fonts/avenir/AvenirLTStd-MediumOblique.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+
+}
+
 
 /*LA CEST A MOI*/
 @tailwind base;
@@ -165,7 +192,11 @@ a {
     background-size: 500% 500%;
     animation: animate 30s linear infinite;
 }
-
+.swag-text:hover {
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    
+}
 
 /* Timeline class to put on an <ol> that draws arrows. */
 .timeline {

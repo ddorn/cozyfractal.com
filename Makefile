@@ -1,21 +1,20 @@
 install:
-	sudo pacman -S python-poetry make
-	poetry install
+	sudo pacman -S python-uv make
 
 install-dev: install
 	npm install
 
 run:
-	poetry run uvicorn app:app --port $${PORT:-8400} --host 0.0.0.0
+	uv run --frozen uvicorn src.app:app --port $${PORT:-8400} --host 0.0.0.0
 
 dev:
-	DEV=true poetry run uvicorn app:app --port $${PORT:-8400} --reload
+	DEV=true uv run --frozen uvicorn app:app --port $${PORT:-8400} --reload
 
 tw:
-	npx tailwindcss -i ./static/source.css -o ./static/style.css --watch
+	npx tailwindcss -i ./src/static/source.css -o ./src/static/style.css --watch
 
 tw-prod:
-	npx tailwindcss -i ./static/source.css -o ./static/style.css
+	npx tailwindcss -i ./src/static/source.css -o ./src/static/style.css
 
 deploy:
 	ssh pine "cd /srv/cozyfractal.com && git pull && systemctl restart cozyfractal"
