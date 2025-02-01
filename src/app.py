@@ -19,6 +19,12 @@ templates = Jinja2Templates(directory=SRC / "templates")
 async def home(request: Request):
     return templates.TemplateResponse("home.html", {"request": request})
 
+# For monitoring. 
+# Fastapi does not support head requests by default. https://github.com/fastapi/fastapi/issues/1773
+@app.head("/", response_class=HTMLResponse)  
+async def home_head(request: Request):
+    return templates.TemplateResponse("home.html", {"request": request})
+
 
 @app.get("/oldhome", response_class=HTMLResponse)
 async def oldhome(request: Request):
