@@ -11,7 +11,7 @@ run-server:
 	/root/.local/bin/uv run --frozen uvicorn src.app:app --port $${PORT:-8400} --host 0.0.0.0
 
 dev:
-	DEV=true uv run --frozen uvicorn app:app --port $${PORT:-8400} --reload
+	DEV=true uv run --frozen uvicorn src.app:app --port $${PORT:-8400} --reload
 
 tw:
 	npx tailwindcss -i ./src/static/source.css -o ./src/static/style.css --watch
