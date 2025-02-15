@@ -1,141 +1,255 @@
-{% extends "layouts/base.html" %}
-{% from "macros/macros.html" import showcase_card, icon %}
-{% block body %}
-    <div class="p-8 mt-4 max-w-xl xl:max-w-3xl mx-auto font-serif min-h-screen text-lg flex flex-col">
+{% extends "layouts/base.html" %} {% from "macros/macros.html" import showcase_card, icon %} {%
+block body %}
+<div class="p-8 mt-4 max-w-xl xl:max-w-3xl mx-auto font-serif min-h-screen text-lg flex flex-col">
+  <nav>
+    <ul class="flex space-x-4 mt-1 justify-end" role="list">
+      <li><a href="/cv">CV</a></li>
+      <li><a href="https://github.com/ddorn">Github</a></li>
+      <li><a href="/showcase" class="!swag-text">Showcase</a></li>
+    </ul>
+  </nav>
 
+  <article class="mt-4">
+    <h1>Diego Dorn</h1>
 
-        <nav>
-            <ul class="flex space-x-4 mt-1 justify-end" role="list">
-                <li><a href="/cv">CV</a></li>
-                <li><a href="https://github.com/ddorn">Github</a></li>
-                <li><a href="/showcase" class="!swag-text">Showcase</a></li>
-            </ul>
-        </nav>
+    <p id="intro-p" class="">I'm trying to make our world a better place for everyone.</p>
 
-        <article class="mt-4">
+    <h2>Preventing risks from AI systems.</h2>
+    <ul>
+      <li>
+        Creation of the
+        <a href="https://github.com/CentreSecuriteIA/BELLS"
+          >Benchmarks for the Evaluation of LLM Supervision</a
+        >
+        (BELLS) at <a href="https://www.securite-ia.fr/">CeSIA</a>.
+      </li>
+      <li>
+        Teaching at <a href="https://ml4good.org">10-day summer schools</a> on systemic risk from AI
+      </li>
+      <li>
+        The
+        <a href="https://go.epfl.ch/sail">Safe AI Lausanne</a>
+        student club
+      </li>
+    </ul>
 
-            <h1 class="text-4xl font-bold">Diego Dorn</h1>
+    <h2>Developing tools to empower humans.</h2>
+    <ul>
+      <li><a href="https://github.com/ddorn/pucoti">Pucoti</a>, a purposeful countdown timer</li>
+      <li>
+        <a href="https://github.com/ddorn/VentFrais">Vent Frais</a>, a deck of cards to foster deep
+        discussions
+      </li>
+      <li>
+        An <a href="https://typos.therandom.space/">LLM-based typo fixer</a> on which the user has
+        control
+      </li>
+      <li>
+        A
+        <a href="https://sprigproofs.org">distributed platform</a>
+        to increase confidence in mathematical proofs
+      </li>
+      <li>
+        A training interface for
+        <a href="https://www.effectivedisagreement.org/">Effectively Handling Disagreements</a>
+      </li>
+    </ul>
 
-            <p id="intro-p" class="">I'm trying to make our world a better place for everyone.</p>
-
-            <h2>Preventing risks from AI systems.</h2>
-            <ul>
-                <li>
-                    Creation of the <a href="https://github.com/CentreSecuriteIA/BELLS">Benchmarks for the Evaluatation of LLM Supervision</a> (BELLS) at
-                <a href="https://www.securite-ia.fr/">CeSIA</a>.
-                </li>
-                <li>Teaching at <a href="https://ml4good.org">10-day summer schools</a>
-                    on systemic risk from AI </li>
-                <li>The
-                    <a href="https://go.epfl.ch/sail">Safe AI Lausanne</a>
-                    student club
-                </li>
-            </ul>
-
-            <h2>Developing tools to empower humans.</h2>
-            <ul>
-                <li><a href="https://github.com/ddorn/pucoti">Pucoti</a>, a purposeful countdown timer</li>
-                <li><a href="https://github.com/ddorn/VentFrais">Vent Frais</a>, a deck of cards to foster deep discussions</li>
-                <li>An <a href="https://typos.therandom.space/">LLM-based typo fixer</a> on which the user has control</li>
-                <li>A
-                    <a href="https://sprigproofs.org">distributed platform</a>
-                    to increase confidence in mathematical proofs</li>
-                <li>A training interface for <a href="https://www.effectivedisagreement.org/">Effectively Handling Disagreements</a></li>
-            </ul>
-
-<!--
+    <!--
             <h2>Ending animal exploitation.</h2>
             <ul>
                 <li>Great vegan receipes (cakes) (others)</li>
             </ul>
 -->
 
-        <!-- <h2>Publications.</h2>
+    <!-- <h2>Publications.</h2>
             <ul>
                 <li></li>
             </ul> -->
 
-            <h2>Recommended readings.</h2>
-            <ul>
-                <li><a href="https://www.goodreads.com/book/show/197773418-slow-productivity">Slow Poductivity</a> by Cal Newport</li>
-                <li><a href="https://www.goodreads.com/book/show/525304.Star_Maker">Starmaker</a> by Olaf Stapledon</li>
-                <li>Paul Graham's essays, especially <a href="https://paulgraham.com/vb.html">Life is Short</a>, <a href="https://paulgraham.com/hwh.html">How to Work Hard</a>, and <a href="https://paulgraham.com/addiction.html">The Acceleration of Addictiveness</a></li>
-                <!-- Axiomatic, Greg egan -->
-                <!--https://jamesclear.com/atomic-habits-summary-->
-                <!-- <li>... to be continued</li> -->
-            </ul>
+    <h2>Fun things.</h2>
+    <ul>
+      <li>
+        <a
+          href="https://ddorn.notion.site/Hot-Chocolate-The-Albert-d167970eece548b8935094df712e64ba?pvs=4"
+          >My hot chocolate recipe schema</a
+        >
+      </li>
+      <li>A <a href="https://ajanse.me/asciidots/language/">2D esolang</a> I co-created</li>
+    </ul>
 
-            <h2>Other.</h2>
-            <ul>
-                <li>
-                    <a href="https://ddorn.notion.site/Hot-Chocolate-The-Albert-d167970eece548b8935094df712e64ba?pvs=4">
-                        My hot chocolate recipe schema</a></li>
-                <li>
-                    A <a href="https://ajanse.me/asciidots/language/">2D esolang</a> I co-created
-            </ul>
+    <hr />
 
-            <p class="text-right text-gray-600 mt-8">
-                Last updated on 2025-01-24
-            </p>
-            <!-- <h2>TODO: Promotional bio.</h2> -->
-        </article>
+    <p>Deep ideas that have influenced me and to which I often come back.</p>
 
-    </div>
-    <style>
-        p {
-            margin-top: 0.5em;
-            margin-bottom: 0.5em;
-        }
-        ul:not(.flex) {
-            list-style-type: disc;
-            list-style-position: outside;
-            margin-left: 1rem;
-        }
-        h1 {
-            color: #948AE3;
-            color: #FD8E4E;
-            color: #98e2f1;
-            color: inherit;
-            color: #B7FFB7;
-        }
-        #intro-p {
-            color: #FC5A70;
-            color: #B7FFB7;
-            color: #FFE091;
-            color: #948AE3;
-            color: #FD8E4E;
-            color: #5AD4E6;
-            color: inherit;
-        }
-        h2 {
-            color: #FD8E4E;
-            color: #FFE091;
-            color: #5AD4E6;
-            color: #FC5A70;
-            color: #948AE3;
-            color: #B7FFB7;
-            margin-top: 1.5rem;
-            font-size: 1.2rem;
-        }
-        a {
-            color: #FFE091;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        nav a {
-            color: #5AD4E6;
-            color: #FD8E4E;
-            color: #948AE3;
-        }
+    <h2>Recommended readings.</h2>
+    <ul>
+      <li>
+        <a href="https://www.goodreads.com/book/show/197773418-slow-productivity"
+          >Slow Productivity</a
+        >
+        by Cal Newport
+      </li>
+      <li>
+        <a href="https://www.goodreads.com/book/show/525304.Star_Maker">Starmaker</a>
+        by Olaf Stapledon
+      </li>
+      <li>
+        Paul Graham's essays, especially
+        <a href="https://paulgraham.com/vb.html">Life is Short</a>,
+        <a href="https://paulgraham.com/hwh.html">How to Work Hard</a>, and
+        <a href="https://paulgraham.com/addiction.html">The Acceleration of Addictiveness</a>
+      </li>
+      <!-- Axiomatic, Greg Egan -->
+      <!--https://jamesclear.com/atomic-habits-summary-->
+      <!-- <li>... to be continued</li> -->
+    </ul>
 
-        :focus {
-            /* Nice ring */
-            outline: 2px solid #5AD4E6;
-            outline-offset: 0.2rem;
-            border-radius: 0.2rem;
-        }
-    </style>
+    <h2>Great movies.</h2>
+    <ul>
+      <li>
+        <a href="https://www.imdb.com/title/tt14152756/">Seaspiracy</a>, on the catastrophic impact
+        of the fishing industry.
+      </li>
+    </ul>
 
-    <script src="{{ url_for('static', path='random.js') }}"></script>
+    <hr />
+    <p>
+      Some truly wonderful tools and services I've found. More tools should embrace their
+      philosophies.
+    </p>
+
+    <h2>Fantastic Free tools</h2>
+    <ul>
+      <li><a href="https://syncthing.net">Syncthing</a>, to synchronize between anything</li>
+      <li>
+        <a href="https://ublockorigin.com/">uBlock Origin</a>, to remove ads, trackers, and
+        annoyances from the web
+      </li>
+      <li><a href="https://logseq.com/">Logseq</a>, for note-taking</li>
+      <li>
+        <a href="https://immich.app/">Immich</a>, a great self-hosted Google Photos equivalent
+      </li>
+      <li><a href="https://actualbudget.org/">Actual Budget</a>, for personal finances</li>
+    </ul>
+
+    <h2>Fantastic tools despite being closed</h2>
+    <ul>
+      <li><a href="https://www.migadu.com/">Migadu</a>, a no-bullshit email provider</li>
+      <li>
+        <a href="https://amazingmarvin.com/">Amazing Marvin</a>, extremely customizable personal
+        task management
+      </li>
+      <li>
+        <a href="https://kagi.com/">Kagi Search</a>, a paid search engine much better than Google
+      </li>
+      <li>
+        <a href="https://www.beeper.com/">Beeper</a>, most chat applications in one, bridging to
+        the reverse-engineered API
+      </li>
+    </ul>
+
+    <p class="last-updated">Last updated on 2025-02-15</p>
+  </article>
+</div>
+<style>
+  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+  ul:not(.flex) {
+    list-style-type: disc;
+    list-style-position: outside;
+    margin-left: 1rem;
+  }
+  h1 {
+    color: #948ae3;
+    color: #fd8e4e;
+    color: #98e2f1;
+    color: inherit;
+    color: #b7ffb7;
+
+    font-size: 2.25rem /* 36px */;
+    line-height: 2.5rem /* 40px */;
+    font-weight: 700;
+  }
+  #intro-p {
+    color: #fc5a70;
+    color: #b7ffb7;
+    color: #ffe091;
+    color: #948ae3;
+    color: #fd8e4e;
+    color: #5ad4e6;
+    color: inherit;
+  }
+  h2 {
+    color: #fd8e4e;
+    color: #ffe091;
+    color: #5ad4e6;
+    color: #fc5a70;
+    color: #948ae3;
+    color: #b7ffb7;
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+  }
+  a {
+    color: #ffe091;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  nav a {
+    color: #5ad4e6;
+    color: #fd8e4e;
+    color: #948ae3;
+  }
+
+  :focus {
+    /* Nice ring */
+    outline: 2px solid #5ad4e6;
+    outline-offset: 0.2rem;
+    border-radius: 0.2rem;
+  }
+
+  .named-hr p {
+    text-align: right;
+    color: #5ad4e6;
+    color: #fd8e4e;
+    color: #948ae3;
+    color: #fc5a70;
+    color: #b7ffb7;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    margin-bottom: 0;
+    margin-right: -1rem;
+    /* margin-left: -1rem; */
+  }
+  hr {
+    border-color: #888;
+    margin: 3rem -1rem;
+  }
+
+  .section-2 {
+    /* margin-top: 3rem; */
+    --color: #948ae3;
+    --color: #fc5a70;
+    --color: #b7ffb7;
+    --color: #fd8e4e;
+    --color: #5ad4e6;
+    /* padding-left: 1rem; */
+  }
+
+  .section-2 h3,
+  .section-2 h1 {
+    color: var(--color);
+  }
+
+  .last-updated {
+    text-align: right;
+    color: #888;
+    margin-top: 3rem;
+  }
+</style>
+
+<script src="{{ url_for('static', path='random.js') }}"></script>
 {% endblock %}
