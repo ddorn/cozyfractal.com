@@ -12,7 +12,7 @@ block body %}
   <article class="mt-4">
     <h1>Diego Dorn</h1>
 
-    <p id="intro-p" class="">I'm trying to make our world a better place for everyone.</p>
+    <p>I'm trying to make our world a better place for everyone.</p>
 
     <h2>Preventing risks from AI systems.</h2>
     <ul>
@@ -144,8 +144,8 @@ block body %}
         <a href="https://kagi.com/">Kagi Search</a>, a paid search engine much better than Google
       </li>
       <li>
-        <a href="https://www.beeper.com/">Beeper</a>, most chat applications in one, bridging to
-        the reverse-engineered API
+        <a href="https://www.beeper.com/">Beeper</a>, most chat applications in one, bridging to the
+        reverse-engineered API
       </li>
     </ul>
 
@@ -157,10 +157,15 @@ block body %}
     margin-top: 0.5em;
     margin-bottom: 0.5em;
   }
-  ul:not(.flex) {
+  ul {
     list-style-type: disc;
     list-style-position: outside;
     margin-left: 1rem;
+  }
+  nav ul {
+    list-style-type: none;
+    list-style-position: outside;
+    margin-left: 0;
   }
   h1 {
     color: #948ae3;
@@ -173,15 +178,7 @@ block body %}
     line-height: 2.5rem /* 40px */;
     font-weight: 700;
   }
-  #intro-p {
-    color: #fc5a70;
-    color: #b7ffb7;
-    color: #ffe091;
-    color: #948ae3;
-    color: #fd8e4e;
-    color: #5ad4e6;
-    color: inherit;
-  }
+
   h2 {
     color: #fd8e4e;
     color: #ffe091;
@@ -211,37 +208,12 @@ block body %}
     border-radius: 0.2rem;
   }
 
-  .named-hr p {
-    text-align: right;
-    color: #5ad4e6;
-    color: #fd8e4e;
-    color: #948ae3;
-    color: #fc5a70;
-    color: #b7ffb7;
-    font-size: 1.2rem;
-    margin-top: 2rem;
-    margin-bottom: 0;
-    margin-right: -1rem;
-    /* margin-left: -1rem; */
-  }
   hr {
     border-color: #888;
     margin: 3rem -1rem;
-  }
-
-  .section-2 {
-    /* margin-top: 3rem; */
-    --color: #948ae3;
-    --color: #fc5a70;
-    --color: #b7ffb7;
-    --color: #fd8e4e;
-    --color: #5ad4e6;
-    /* padding-left: 1rem; */
-  }
-
-  .section-2 h3,
-  .section-2 h1 {
-    color: var(--color);
+    border-color: #5ad4e6;
+    border-color: #fd8e4e;
+    /* border-color: #948ae3; */
   }
 
   .last-updated {
