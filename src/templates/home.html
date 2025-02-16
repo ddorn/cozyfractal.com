@@ -119,9 +119,22 @@ block body %}
       philosophies.
     </p>
 
+      {% macro details_item(name, url, extra, details) %}
+      <li>
+        {% if details %}
+        <details>
+          <summary><a href="{{ url }}">{{ name }}</a>, {{extra}}</summary>
+          <p>{{details}}</p>
+        </details>
+        {% else %}
+        <a href="{{ url }}">{{ name }}</a>, {{extra}}
+        {% endif %}
+      </li>
+      {% endmacro %}
+
     <h2>Fantastic Free tools</h2>
     <ul>
-      <li><a href="https://syncthing.net">Syncthing</a>, to synchronize between anything</li>
+      <!-- <li><a href="https://syncthing.net">Syncthing</a>, to synchronize between anything</li>
       <li>
         <a href="https://ublockorigin.com/">uBlock Origin</a>, to remove ads, trackers, and
         annoyances from the web
@@ -130,23 +143,67 @@ block body %}
       <li>
         <a href="https://immich.app/">Immich</a>, a great self-hosted Google Photos equivalent
       </li>
-      <li><a href="https://actualbudget.org/">Actual Budget</a>, for personal finances</li>
+      <li><a href="https://actualbudget.org/">Actual Budget</a>, for personal finances</li> -->
+
+      {{
+        details_item("Syncthing",
+          "https://syncthing.net",
+          "to synchronize between anything",
+          "")
+      }}
+      {{
+        details_item("uBlock Origin",
+          "https://ublockorigin.com/",
+          "to remove ads, trackers, and annoyances from the web",
+          "")
+      }}
+      {{
+        details_item("Logseq",
+          "https://logseq.com/",
+          "for note-taking",
+          "")
+      }}
+      {{
+        details_item("Immich",
+          "https://immich.app/",
+          "a great self-hosted Google Photos equivalent",
+          "")
+      }}
+      {{
+        details_item("Actual Budget",
+          "https://actualbudget.org/",
+          "for personal finances",
+          "")
+      }}
     </ul>
 
-    <h2>Fantastic tools despite being closed</h2>
+    <h2>Fantastic tools despite being closed.</h2>
     <ul>
-      <li><a href="https://www.migadu.com/">Migadu</a>, a no-bullshit email provider</li>
-      <li>
-        <a href="https://amazingmarvin.com/">Amazing Marvin</a>, extremely customizable personal
-        task management
-      </li>
-      <li>
-        <a href="https://kagi.com/">Kagi Search</a>, a paid search engine much better than Google
-      </li>
-      <li>
-        <a href="https://www.beeper.com/">Beeper</a>, most chat applications in one, bridging to the
-        reverse-engineered API
-      </li>
+      {{
+        details_item("Migadu",
+          "https://www.migadu.com/",
+          "a no-bullshit email provider",
+          "Migadu is fantastic. You can have as many mailboxes, domains, and aliases you want. It's extremely customizable and you pay in tiers for what you use (storage & number of emails sent). Better than the 10+ other I've tried. Not for mailing lists.")
+      }}
+      {{
+        details_item("Amazing Marvin",
+          "https://amazingmarvin.com/",
+          "an extremely customizable personal task management",
+          "I've paid for Amazing Marvin since 2021. It can emulate many other task management systems, and I always find a way to build the system I need... without it being overwhelmingly complex!")
+      }}
+      {{
+        details_item("Kagi Search",
+          "https://kagi.com/",
+          "a paid search engine much better than Google",
+          "I have been using it only since 2024, but I find things so much faster, and nicer things too. It downranks ad and tracker loaded websites, you can adjust the weights of websites to see them more or less, and it even surfaces great personal blogs.")
+      }}
+      {{
+        details_item("Beeper",
+          "https://www.beeper.com/",
+          "a chat applications aggregator",
+          "Still a bit hacky, but can show you your messages from 12 chat apps in a single interface. Apart from that, youcan auto-archive chats once you've answered to see only the ones that need attention.")
+      }}
+
     </ul>
 
     <p class="last-updated">Last updated on 2025-02-15</p>
@@ -166,6 +223,10 @@ block body %}
     list-style-type: none;
     list-style-position: outside;
     margin-left: 0;
+  }
+  li:has(details) {
+    list-style: none;
+    margin-left: -1rem;
   }
   h1 {
     color: #948ae3;
@@ -216,6 +277,12 @@ block body %}
     /* border-color: #948ae3; */
   }
 
+  details p {
+    margin-left: 1rem;
+    padding-left: 1rem;
+    border-left: 2px solid #fd8e4e;
+  }
+
   .last-updated {
     text-align: right;
     color: #888;
@@ -224,4 +291,19 @@ block body %}
 </style>
 
 <script src="{{ url_for('static', path='random.js') }}"></script>
+<script>
+  // When hovering a details element, open it if the mouse stays on it more than 1s
+  document.querySelectorAll('details').forEach((details) => {
+    details.addEventListener('mouseover', () => {
+      if (details.open) {
+        return;
+      }
+      setTimeout(() => {
+        if (details.matches(':hover')) {
+          details.open = true;
+        }
+      }, 800);
+    });
+  });
+</script>
 {% endblock %}
