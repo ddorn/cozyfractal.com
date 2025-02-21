@@ -5,7 +5,7 @@ install-dev: install
 	npm install
 
 run:
-	uv run --frozen uvicorn src.app:app --port $${PORT:-8400} --host 0.0.0.0
+	uv run --frozen uvicorn src.app:app --port $${PORT:-8400} --host 0.0.0.0 --reload
 
 run-server:
 	/root/.local/bin/uv run --frozen uvicorn src.app:app --port $${PORT:-8400} --host 0.0.0.0
