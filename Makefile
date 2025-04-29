@@ -20,4 +20,10 @@ tw-prod:
 	npx tailwindcss -i ./src/static/source.css -o ./src/static/style.css
 
 deploy:
-	ssh pine "cd /srv/cozyfractal.com && git pull && systemctl restart cozyfractal"
+	git ls-files | rsync -avzP --files-from=- . pine:/srv/cozyfractal.com
+	ssh pine "cd /srv/cozyfractal.com && make copy-service-and-restart"
+
+copy-service-and-restart:
+	cp ./cozyfractal.service /etc/systemd/system/cozyfractal.service
+	systemctl daemon-reload
+	systemctl restart cozyfractal
