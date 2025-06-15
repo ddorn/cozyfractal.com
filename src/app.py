@@ -51,7 +51,7 @@ async def home_redirect():
 
 @app.get("/blog", response_class=RedirectResponse)
 async def blog_redirect():
-    return RedirectResponse("https://ddorn.gitlab.io")
+    return RedirectResponse("https://blog.ddorn.fr")
 
 @app.get("/oldcv", response_class=HTMLResponse)
 async def oldcv(request: Request):
