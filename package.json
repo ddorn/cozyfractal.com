@@ -1,7 +1,5 @@
 {
-  "dependencies": {
-    "vue": "^3.0.5"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.16",
     "autoprefixer": "^10.4.16",
@@ -9,8 +7,7 @@
     "tailwindcss": "^3.4.0"
   },
   "scripts": {
-    "tw": "tailwind build static/source.css -o static/style.css -c tailwind.config.js --no-autoprefixer",
-    "tw-prod": "NODE_ENV=production npm run tw",
-    "start": "poetry run uvicorn app:app --port ${PORT:-8400}"
+    "tw": "tailwindcss -i ./src/static/source.css -o ./src/static/style.css --no-autoprefixer",
+    "tw-prod": "NODE_ENV=production tailwindcss -i ./src/static/source.css -o ./src/static/style.css --minify"
   }
 }

@@ -1,29 +1,19 @@
 install:
-	sudo pacman -S python-uv make
+	uv sync --frozen --no-dev
 
 install-dev: install
 	npm install
 
 run:
-	uv run --frozen uvicorn src.app:app --port $${PORT:-8400} --host 0.0.0.0 --reload
-
-run-server:
-	/root/.local/bin/uv run --frozen uvicorn src.app:app --port $${PORT:-8400} --host 0.0.0.0
-
-dev:
-	DEV=true uv run --frozen uvicorn src.app:app --port $${PORT:-8400} --reload
+	uv run python -m http.server 8000 --directory dist
 
 tw:
 	npx tailwindcss -i ./src/static/source.css -o ./src/static/style.css --watch
 
 tw-prod:
-	npx tailwindcss -i ./src/static/source.css -o ./src/static/style.css
+	npx tailwindcss -i ./src/static/source.css -o ./src/static/style.css --minify
 
-deploy:
-	git ls-files | rsync -avzP --files-from=- . pine:/srv/cozyfractal.com
-	ssh pine "cd /srv/cozyfractal.com && make copy-service-and-restart"
+build:
+	uv run python scripts/render_static.py
 
-copy-service-and-restart:
-	cp ./cozyfractal.service /etc/systemd/system/cozyfractal.service
-	systemctl daemon-reload
-	systemctl restart cozyfractal
+.PHONY: install install-dev tw tw-prod build run

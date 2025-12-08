@@ -3,13 +3,10 @@ name = "cozyfractal.com"
 version = "1.0.0"
 description = "Personal website for CozyFractal"
 authors = [{ name = "ddorn", email = "diego.dorn@free.fr" }]
-requires-python = "~=3.8"
+requires-python = "~=3.13.0"
 license = { text = "WFTPL"}
 dependencies = [
-    "fastapi>=0.70.0,<0.71",
-    "uvicorn>=0.15.0,<0.16",
     "Jinja2>=3.0.2,<4",
-    "aiohttp>=3.10.11",
 ]
 
 [dependency-groups]

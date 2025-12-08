@@ -1,22 +1,32 @@
 # cozyfractal.com
 
-### Dependencies
+## Static build
 
-```shell script
-make install
-```
+### Install
+- Python deps: `make install` (uses uv, installs only Jinja2).
+- Dev (Node) deps for Tailwind: `make install-dev` (npm install).
 
-### Dev dependencies
+### Build CSS
+- `make tw` (watch) or `make tw-prod` (minified, one-shot).
 
-Npm is required at dev time to use tailwindcss.
+### Render static site
+- `make build` → writes the site to `dist/`, copies `static/`, emits redirect stubs and `404.html`.
 
-```shell script
-make install-dev
-```
+### Deploy to GitHub Pages
+- A GitHub Actions workflow (`.github/workflows/deploy.yml`) builds Tailwind, renders `dist/`, uploads it, and deploys to Pages on each push to `main` (or manual dispatch).
 
-Then `make tw` and `make tw-dev` can build the css.
+Notes:
+- Redirects are emitted as small `index.html` files under their paths (`/home`, `/blog`, `/cv`, `/cvpdf`, `/gamedev`, `/vent-frais`, `/uptime`).
+- `404.html` is generated at the root for GitHub Pages fallback handling.
 
-### Run
+### Build static site (GitHub Pages)
 
-`make run` or `make dev`
+1. Render static HTML and copy assets into `dist/`:
+   ```sh
+   uv run python scripts/render_static.py
+   ```
+2. Deploy `dist/` (e.g., push it to the `gh-pages` branch for GitHub Pages or upload to any static host).
 
+Notes:
+- Redirects are emitted as small `index.html` files under their paths (`/home`, `/blog`, `/cv`, `/cvpdf`, `/gamedev`, `/vent-frais`, `/uptime`).
+- A `404.html` is generated at the root for GitHub Pages fallback handling.
