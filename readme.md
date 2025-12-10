@@ -5,6 +5,7 @@
 ### Install
 - Python deps: `make install` (uses uv, installs only Jinja2).
 - Dev (Node) deps for Tailwind: `make install-dev` (npm install).
+- Tailwind CSS v4.1; theme and breakpoints are set in `src/static/source.css` via `@theme`.
 
 ### Build CSS
 - `make tw` (watch) or `make tw-prod` (minified, one-shot).

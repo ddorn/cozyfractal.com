@@ -99,6 +99,9 @@ def main() -> None:
 
     copy_static()
 
+    # Custom domain for GitHub Pages
+    (DIST / "CNAME").write_text("ddorn.fr\n", encoding="utf-8")
+
     print(f"Site built to {DIST}")
 
 

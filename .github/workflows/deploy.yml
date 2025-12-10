@@ -2,7 +2,7 @@ name: Deploy static site
 
 on:
   push:
-    branches: ["main"]
+    branches: ["master"]
   workflow_dispatch:
 
 permissions:
@@ -30,7 +30,7 @@ jobs:
         run: npm ci
 
       - name: Build CSS
-        run: npx tailwindcss -i ./src/static/source.css -o ./src/static/style.css --minify
+        run: npm run tw-prod
 
       - name: Setup uv
         uses: astral-sh/setup-uv@v3
